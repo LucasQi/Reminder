@@ -53,12 +53,18 @@ final class UNService: NSObject{
         content.sound = .default()
         content.badge = 1
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
-        let request = UNNotificationRequest(identifier: "userNotification.timer", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: "userNotification.date", content: content, trigger: trigger)
         unCenter.add(request)
     }
     
     func locationRequest(){
-        
+        let content = UNMutableNotificationContent()
+        content.title = "You have returned"
+        content.body = "Welcome back silly coder you."
+        content.sound = .default()
+        content.badge = 1
+        let request = UNNotificationRequest(identifier: "userNotification.location", content: content, trigger: nil)
+        unCenter.add(request)
     }
     
 }

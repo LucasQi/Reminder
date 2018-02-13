@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         UNService.instance.Authorize()
+        CLService.instance.authorize()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnteredRegion), name: Notification.Name("internalNotification.enteredRegion"), object: nil)
     }
     
     @IBAction func onTimerTapped(){
@@ -22,7 +25,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func onDateTapped(){
-        AlertService.actinSheet(in: self, title: "Some Future Tiem.") {
+        AlertService.actinSheet(in: self, title: "Some Future Time.") {
             var components = DateComponents()
             components.second = 0
             UNService.instance.dateRequest(with: components)
@@ -30,8 +33,12 @@ class ViewController: UIViewController {
     }
     @IBAction func onLocationTapped(){
         AlertService.actinSheet(in: self, title: "When I return") {
-            
+            CLService.instance.updateLocations()
         }
+    }
+    
+    @objc func didEnteredRegion(){
+        UNService.instance.locationRequest()
     }
 
 }
