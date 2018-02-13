@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Reminder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9x-hj-SSs" customClass="ShadowView" customModule="Reminder" customModuleProvider="target">
+                                <rect key="frame" x="46.5" y="203" width="281" height="281"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZFg-4F-xXO">
+                                        <rect key="frame" x="10" y="10" width="261" height="261"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zrr-t6-3Ru">
+                                                <rect key="frame" x="70.5" y="0.0" width="120.5" height="120.5"/>
+                                                <state key="normal" image="timerIcon"/>
+                                                <connections>
+                                                    <action selector="onTimerTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hm2-tD-s8U"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ls5-4I-zDq">
+                                                <rect key="frame" x="0.0" y="140.5" width="261" height="120.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5MN-jv-zeW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="120.5" height="120.5"/>
+                                                        <state key="normal" image="dateIcon"/>
+                                                        <connections>
+                                                            <action selector="onDateTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y5L-cU-FhQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdv-sN-cBR">
+                                                        <rect key="frame" x="140.5" y="0.0" width="120.5" height="120.5"/>
+                                                        <state key="normal" image="locationIcon"/>
+                                                        <connections>
+                                                            <action selector="onLocationTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRY-9h-btD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="vdv-sN-cBR" firstAttribute="height" secondItem="zrr-t6-3Ru" secondAttribute="height" id="8Az-su-fUD"/>
+                                            <constraint firstItem="5MN-jv-zeW" firstAttribute="width" secondItem="zrr-t6-3Ru" secondAttribute="width" id="VI9-bu-AxZ"/>
+                                            <constraint firstItem="5MN-jv-zeW" firstAttribute="height" secondItem="zrr-t6-3Ru" secondAttribute="height" id="lMc-Hz-X7f"/>
+                                            <constraint firstItem="vdv-sN-cBR" firstAttribute="width" secondItem="zrr-t6-3Ru" secondAttribute="width" id="t2b-p5-SV5"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZFg-4F-xXO" firstAttribute="centerX" secondItem="s9x-hj-SSs" secondAttribute="centerX" id="2BQ-Vc-JTE"/>
+                                    <constraint firstItem="zrr-t6-3Ru" firstAttribute="height" secondItem="s9x-hj-SSs" secondAttribute="height" multiplier="0.5" constant="-20" id="Piw-bi-Lz0"/>
+                                    <constraint firstAttribute="width" secondItem="s9x-hj-SSs" secondAttribute="height" id="X0E-Gh-zeZ"/>
+                                    <constraint firstItem="ZFg-4F-xXO" firstAttribute="centerY" secondItem="s9x-hj-SSs" secondAttribute="centerY" id="mxB-G4-jje"/>
+                                    <constraint firstItem="zrr-t6-3Ru" firstAttribute="width" secondItem="s9x-hj-SSs" secondAttribute="width" multiplier="0.5" constant="-20" id="s5l-ec-jbv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.90907118055555558" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="s9x-hj-SSs" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="ZED-c2-61B"/>
+                            <constraint firstItem="s9x-hj-SSs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pmK-uW-Dlg"/>
+                            <constraint firstItem="s9x-hj-SSs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="up8-Pz-ddM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dateIcon" width="100" height="100"/>
+        <image name="locationIcon" width="100" height="100"/>
+        <image name="timerIcon" width="100" height="100"/>
+    </resources>
+</document>

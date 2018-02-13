@@ -12,6 +12,11 @@
 		2297DE342032C7E9006E09FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE322032C7E9006E09FC /* Main.storyboard */; };
 		2297DE362032C7E9006E09FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE352032C7E9006E09FC /* Assets.xcassets */; };
 		2297DE392032C7E9006E09FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE372032C7E9006E09FC /* LaunchScreen.storyboard */; };
+		2297DE4A2032CCB3006E09FC /* LocationAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE472032CCB3006E09FC /* LocationAlert.png */; };
+		2297DE4B2032CCB3006E09FC /* TimeAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE482032CCB3006E09FC /* TimeAlert.png */; };
+		2297DE4C2032CCB3006E09FC /* DateAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 2297DE492032CCB3006E09FC /* DateAlert.png */; };
+		2297DE4E2032CECF006E09FC /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297DE4D2032CECF006E09FC /* ShadowView.swift */; };
+		2297DE522032D329006E09FC /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297DE512032D329006E09FC /* UNService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		2297DE352032C7E9006E09FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2297DE382032C7E9006E09FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2297DE3A2032C7E9006E09FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2297DE472032CCB3006E09FC /* LocationAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationAlert.png; sourceTree = "<group>"; };
+		2297DE482032CCB3006E09FC /* TimeAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimeAlert.png; sourceTree = "<group>"; };
+		2297DE492032CCB3006E09FC /* DateAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DateAlert.png; sourceTree = "<group>"; };
+		2297DE4D2032CECF006E09FC /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		2297DE512032D329006E09FC /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +48,7 @@
 		2297DE222032C7E9006E09FC = {
 			isa = PBXGroup;
 			children = (
+				2297DE3A2032C7E9006E09FC /* Info.plist */,
 				2297DE2D2032C7E9006E09FC /* Reminder */,
 				2297DE2C2032C7E9006E09FC /* Products */,
 			);
@@ -54,14 +65,82 @@
 		2297DE2D2032C7E9006E09FC /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				2297DE2E2032C7E9006E09FC /* AppDelegate.swift */,
-				2297DE302032C7E9006E09FC /* ViewController.swift */,
-				2297DE322032C7E9006E09FC /* Main.storyboard */,
-				2297DE352032C7E9006E09FC /* Assets.xcassets */,
-				2297DE372032C7E9006E09FC /* LaunchScreen.storyboard */,
-				2297DE3A2032C7E9006E09FC /* Info.plist */,
+				2297DE4F2032D307006E09FC /* Service */,
+				2297DE452032CAAB006E09FC /* StoryBoard */,
+				2297DE442032CA92006E09FC /* Utils */,
+				2297DE432032CA89006E09FC /* AppDelegate */,
+				2297DE422032CA7A006E09FC /* Model */,
+				2297DE412032CA77006E09FC /* View */,
+				2297DE402032CA75006E09FC /* Controller */,
 			);
 			path = Reminder;
+			sourceTree = "<group>";
+		};
+		2297DE402032CA75006E09FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE302032C7E9006E09FC /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2297DE412032CA77006E09FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE4D2032CECF006E09FC /* ShadowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2297DE422032CA7A006E09FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2297DE432032CA89006E09FC /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE2E2032C7E9006E09FC /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		2297DE442032CA92006E09FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE352032C7E9006E09FC /* Assets.xcassets */,
+				2297DE462032CC9C006E09FC /* NotificationAssets */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		2297DE452032CAAB006E09FC /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE372032C7E9006E09FC /* LaunchScreen.storyboard */,
+				2297DE322032C7E9006E09FC /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		2297DE462032CC9C006E09FC /* NotificationAssets */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE492032CCB3006E09FC /* DateAlert.png */,
+				2297DE472032CCB3006E09FC /* LocationAlert.png */,
+				2297DE482032CCB3006E09FC /* TimeAlert.png */,
+			);
+			path = NotificationAssets;
+			sourceTree = "<group>";
+		};
+		2297DE4F2032D307006E09FC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2297DE512032D329006E09FC /* UNService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +203,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2297DE392032C7E9006E09FC /* LaunchScreen.storyboard in Resources */,
+				2297DE4A2032CCB3006E09FC /* LocationAlert.png in Resources */,
+				2297DE4B2032CCB3006E09FC /* TimeAlert.png in Resources */,
 				2297DE362032C7E9006E09FC /* Assets.xcassets in Resources */,
+				2297DE4C2032CCB3006E09FC /* DateAlert.png in Resources */,
 				2297DE342032C7E9006E09FC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +218,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2297DE4E2032CECF006E09FC /* ShadowView.swift in Sources */,
 				2297DE312032C7E9006E09FC /* ViewController.swift in Sources */,
+				2297DE522032D329006E09FC /* UNService.swift in Sources */,
 				2297DE2F2032C7E9006E09FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,7 +360,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K53FCL976W;
-				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhAzharudheen.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +375,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K53FCL976W;
-				INFOPLIST_FILE = Reminder/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.muhAzharudheen.Reminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

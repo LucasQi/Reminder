@@ -20,6 +20,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func onTimerTapped(){
+        print("Timer Tapped")
+    }
+    @IBAction func onDateTapped(){
+        print("Date Tapped")
+    }
+    @IBAction func onLocationTapped(){
+        print("Location Tapped")
+    }
 
 }
 
