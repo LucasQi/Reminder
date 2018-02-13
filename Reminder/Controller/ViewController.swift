@@ -17,13 +17,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onTimerTapped(){
-        UNService.instance.timerRequest(with: 5)
+        AlertService.actinSheet(in: self, title: "5 seconds") {
+            UNService.instance.timerRequest(with: 5)
+        }
     }
     @IBAction func onDateTapped(){
-        print("Date Tapped")
+        AlertService.actinSheet(in: self, title: "Some Future Tiem.") {
+            var components = DateComponents()
+            components.second = 0
+            UNService.instance.dateRequest(with: components)
+        }
     }
     @IBAction func onLocationTapped(){
-        print("Location Tapped")
+        AlertService.actinSheet(in: self, title: "When I return") {
+            
+        }
     }
 
 }

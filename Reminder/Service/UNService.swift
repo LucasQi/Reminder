@@ -38,6 +38,8 @@ final class UNService: NSObject{
         let content = UNMutableNotificationContent()
         content.title = "Timer Finished"
         content.body = "Your timer is all done. YAY!"
+        content.sound = .default()
+        content.badge = 1
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
         let request = UNNotificationRequest(identifier: "userNotification.timer", content: content, trigger: trigger)
         unCenter.add(request)
@@ -45,7 +47,14 @@ final class UNService: NSObject{
     }
     
     func dateRequest(with components: DateComponents){
-        
+        let content = UNMutableNotificationContent()
+        content.title = "Date Trigger"
+        content.body = "it is now the future!"
+        content.sound = .default()
+        content.badge = 1
+        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
+        let request = UNNotificationRequest(identifier: "userNotification.timer", content: content, trigger: trigger)
+        unCenter.add(request)
     }
     
     func locationRequest(){
