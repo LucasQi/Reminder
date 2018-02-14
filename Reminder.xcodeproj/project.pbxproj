@@ -19,6 +19,12 @@
 		2297DE522032D329006E09FC /* UNService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297DE512032D329006E09FC /* UNService.swift */; };
 		2297DE542033114D006E09FC /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297DE532033114D006E09FC /* AlertService.swift */; };
 		2297DE5620331521006E09FC /* CLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297DE5520331521006E09FC /* CLService.swift */; };
+		22A8513D2034272600BFF60A /* NotificationAttachmentID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8513C2034272600BFF60A /* NotificationAttachmentID.swift */; };
+		22A851412034285400BFF60A /* LocationAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A8513F2034285400BFF60A /* LocationAlert.png */; };
+		22A851422034285400BFF60A /* DateAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A851402034285400BFF60A /* DateAlert.png */; };
+		22A851442034285B00BFF60A /* TimeAlert.png in Resources */ = {isa = PBXBuildFile; fileRef = 22A851432034285B00BFF60A /* TimeAlert.png */; };
+		22A8514720342C5300BFF60A /* NotificationActionID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A8514620342C5300BFF60A /* NotificationActionID.swift */; };
+		22A8514A2034301000BFF60A /* NotificationCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A851492034301000BFF60A /* NotificationCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +42,12 @@
 		2297DE512032D329006E09FC /* UNService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UNService.swift; sourceTree = "<group>"; };
 		2297DE532033114D006E09FC /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
 		2297DE5520331521006E09FC /* CLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLService.swift; sourceTree = "<group>"; };
+		22A8513C2034272600BFF60A /* NotificationAttachmentID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAttachmentID.swift; sourceTree = "<group>"; };
+		22A8513F2034285400BFF60A /* LocationAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationAlert.png; sourceTree = "<group>"; };
+		22A851402034285400BFF60A /* DateAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DateAlert.png; sourceTree = "<group>"; };
+		22A851432034285B00BFF60A /* TimeAlert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TimeAlert.png; sourceTree = "<group>"; };
+		22A8514620342C5300BFF60A /* NotificationActionID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationActionID.swift; sourceTree = "<group>"; };
+		22A851492034301000BFF60A /* NotificationCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +103,7 @@
 		2297DE412032CA77006E09FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22A8513E2034281700BFF60A /* NotificationAssets */,
 				2297DE4D2032CECF006E09FC /* ShadowView.swift */,
 			);
 			path = View;
@@ -99,6 +112,9 @@
 		2297DE422032CA7A006E09FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22A8513C2034272600BFF60A /* NotificationAttachmentID.swift */,
+				22A8514620342C5300BFF60A /* NotificationActionID.swift */,
+				22A851492034301000BFF60A /* NotificationCategory.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,6 +163,16 @@
 				2297DE5520331521006E09FC /* CLService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		22A8513E2034281700BFF60A /* NotificationAssets */ = {
+			isa = PBXGroup;
+			children = (
+				22A851402034285400BFF60A /* DateAlert.png */,
+				22A8513F2034285400BFF60A /* LocationAlert.png */,
+				22A851432034285B00BFF60A /* TimeAlert.png */,
+			);
+			path = NotificationAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,11 +235,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2297DE392032C7E9006E09FC /* LaunchScreen.storyboard in Resources */,
+				22A851412034285400BFF60A /* LocationAlert.png in Resources */,
 				2297DE4A2032CCB3006E09FC /* LocationAlert.png in Resources */,
 				2297DE4B2032CCB3006E09FC /* TimeAlert.png in Resources */,
 				2297DE362032C7E9006E09FC /* Assets.xcassets in Resources */,
 				2297DE4C2032CCB3006E09FC /* DateAlert.png in Resources */,
+				22A851422034285400BFF60A /* DateAlert.png in Resources */,
 				2297DE342032C7E9006E09FC /* Main.storyboard in Resources */,
+				22A851442034285B00BFF60A /* TimeAlert.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,10 +255,13 @@
 			files = (
 				2297DE5620331521006E09FC /* CLService.swift in Sources */,
 				2297DE4E2032CECF006E09FC /* ShadowView.swift in Sources */,
+				22A8513D2034272600BFF60A /* NotificationAttachmentID.swift in Sources */,
 				2297DE312032C7E9006E09FC /* ViewController.swift in Sources */,
 				2297DE522032D329006E09FC /* UNService.swift in Sources */,
 				2297DE2F2032C7E9006E09FC /* AppDelegate.swift in Sources */,
 				2297DE542033114D006E09FC /* AlertService.swift in Sources */,
+				22A8514720342C5300BFF60A /* NotificationActionID.swift in Sources */,
+				22A8514A2034301000BFF60A /* NotificationCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

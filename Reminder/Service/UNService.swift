@@ -40,6 +40,9 @@ final class UNService: NSObject{
         content.body = "Your timer is all done. YAY!"
         content.sound = .default()
         content.badge = 1
+        if let attachment = getAttachment(for: .timer){
+            content.attachments = [attachment]
+        }
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval, repeats: false)
         let request = UNNotificationRequest(identifier: "userNotification.timer", content: content, trigger: trigger)
         unCenter.add(request)
@@ -52,6 +55,9 @@ final class UNService: NSObject{
         content.body = "it is now the future!"
         content.sound = .default()
         content.badge = 1
+        if let attachment = getAttachment(for: .date){
+            content.attachments = [attachment]
+        }
         let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: true)
         let request = UNNotificationRequest(identifier: "userNotification.date", content: content, trigger: trigger)
         unCenter.add(request)
@@ -63,8 +69,44 @@ final class UNService: NSObject{
         content.body = "Welcome back silly coder you."
         content.sound = .default()
         content.badge = 1
+        if let attachment = getAttachment(for: .location){
+            content.attachments = [attachment]
+        }
         let request = UNNotificationRequest(identifier: "userNotification.location", content: content, trigger: nil)
         unCenter.add(request)
+    }
+    func setupActionsAndCategories(){
+        
+        let timerAction = UNNotificationAction(identifier: NotiificationActionID.timer.rawValue, title: "Run Timer Logic", options: [.authenticationRequired])
+        let dateAction = UNNotificationAction(identifier: NotiificationActionID.date.rawValue, title: "Run Date Logic", options: [.authenticationRequired])
+        let locationAction = UNNotificationAction(identifier: NotiificationActionID.location.rawValue, title: "Run Location Logic", options: [.authenticationRequired])
+        
+        let timerCategory = UNNotificationCategory(identifier: NotificationCategory.timer.rawValue, actions: [timerAction], intentIdentifiers: [])
+        let dateCategory = UNNotificationCategory(identifier: NotificationCategory.date.rawValue, actions: [dateAction], intentIdentifiers: [])
+        let locationCategory = UNNotificationCategory(identifier: NotificationCategory.location.rawValue, actions: [locationAction], intentIdentifiers: [])
+        
+        
+        
+    }
+    
+    
+    private func getAttachment(for id: NotificationAttachmentID) -> UNNotificationAttachment?{
+        var imageName:String
+        
+        switch id {
+        case .timer : imageName = "TimeAlert"
+        case .date : imageName = "DateAlert"
+        case .location : imageName = "LocationAlert"
+        }
+        
+        guard let url = Bundle.main.url(forResource: imageName, withExtension: "png") else { return nil}
+        
+        do {
+            let attachment = try UNNotificationAttachment(identifier: id.rawValue, url: url)
+            return attachment
+        } catch {
+            return nil
+        }
     }
     
 }
