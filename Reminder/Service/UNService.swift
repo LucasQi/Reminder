@@ -32,6 +32,7 @@ final class UNService: NSObject{
     
     private func configure(){
         self.unCenter.delegate = self
+        setupActionsAndCategories()
     }
     
     func timerRequest(with interval: TimeInterval){
@@ -40,6 +41,7 @@ final class UNService: NSObject{
         content.body = "Your timer is all done. YAY!"
         content.sound = .default()
         content.badge = 1
+        content.categoryIdentifier = NotificationCategory.timer.rawValue
         if let attachment = getAttachment(for: .timer){
             content.attachments = [attachment]
         }
@@ -55,6 +57,7 @@ final class UNService: NSObject{
         content.body = "it is now the future!"
         content.sound = .default()
         content.badge = 1
+        content.categoryIdentifier = NotificationCategory.timer.rawValue
         if let attachment = getAttachment(for: .date){
             content.attachments = [attachment]
         }
@@ -69,23 +72,30 @@ final class UNService: NSObject{
         content.body = "Welcome back silly coder you."
         content.sound = .default()
         content.badge = 1
+        content.categoryIdentifier = NotificationCategory.location.rawValue
         if let attachment = getAttachment(for: .location){
             content.attachments = [attachment]
         }
         let request = UNNotificationRequest(identifier: "userNotification.location", content: content, trigger: nil)
         unCenter.add(request)
     }
-    func setupActionsAndCategories(){
+    private func setupActionsAndCategories(){
         
         let timerAction = UNNotificationAction(identifier: NotiificationActionID.timer.rawValue, title: "Run Timer Logic", options: [.authenticationRequired])
         let dateAction = UNNotificationAction(identifier: NotiificationActionID.date.rawValue, title: "Run Date Logic", options: [.authenticationRequired])
         let locationAction = UNNotificationAction(identifier: NotiificationActionID.location.rawValue, title: "Run Location Logic", options: [.authenticationRequired])
         
-        let timerCategory = UNNotificationCategory(identifier: NotificationCategory.timer.rawValue, actions: [timerAction], intentIdentifiers: [])
-        let dateCategory = UNNotificationCategory(identifier: NotificationCategory.date.rawValue, actions: [dateAction], intentIdentifiers: [])
-        let locationCategory = UNNotificationCategory(identifier: NotificationCategory.location.rawValue, actions: [locationAction], intentIdentifiers: [])
+        let timerCategory = UNNotificationCategory(identifier: NotificationCategory.timer.rawValue,
+                                                   actions: [timerAction],
+                                                   intentIdentifiers: [])
+        let dateCategory = UNNotificationCategory(identifier: NotificationCategory.date.rawValue,
+                                                  actions: [dateAction],
+                                                  intentIdentifiers: [])
+        let locationCategory = UNNotificationCategory(identifier: NotificationCategory.location.rawValue,
+                                                      actions: [locationAction],
+                                                      intentIdentifiers: [])
         
-        
+        unCenter.setNotificationCategories([timerCategory, dateCategory, locationCategory])
         
     }
     
